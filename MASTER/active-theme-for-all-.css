@@ -4,35 +4,54 @@
    Purpose: Global design tokens
 =========================== */
 
+/* =========================
+   🌍 MASTER GLOBAL THEME
+   Áp dụng cho TẤT CẢ website
+========================= */
+
+/* 1️⃣ Biến màu toàn cục */
 :root {
-  /* ===== COLORS ===== */
   --bg-main: #0f1115;
-  --bg-secondary: #161a22;
+  --bg-secondary: #171a21;
 
   --text-main: #e6e6eb;
-  --text-muted: #9aa0b3;
+  --text-muted: #9aa0aa;
 
-  --accent-main: #7aa2ff;
-  --accent-soft: #a5b4fc;
+  --accent: #7aa2f7;
+  --accent-soft: rgba(122, 162, 247, 0.25);
 
-  /* ===== TYPO ===== */
-  --font-main: "Inter", system-ui, sans-serif;
-  --font-size-base: 14px;
-  --font-size-lg: 16px;
-
-  /* ===== RADIUS ===== */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-
-  /* ===== EFFECT ===== */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.3s ease;
+  --border-soft: rgba(255,255,255,0.08);
 }
 
-/* ===== GLOBAL RESET (AN TOÀN) ===== */
-body {
-  background-color: var(--bg-main);
+/* 2️⃣ Background chung */
+html, body {
+  background-color: var(--bg-main) !important;
+  color: var(--text-main) !important;
+}
+
+/* 3️⃣ Text chung */
+* {
   color: var(--text-main);
-  font-family: var(--font-main);
-  font-size: var(--font-size-base);
+  font-family: "Inter", "Segoe UI", sans-serif;
 }
+
+/* 4️⃣ Link */
+a {
+  color: var(--accent) !important;
+}
+
+/* 5️⃣ Border & panel */
+div, section, main {
+  border-color: var(--border-soft);
+}
+
+/* 6️⃣ Scrollbar (web nào hỗ trợ thì áp dụng) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-soft);
+  border-radius: 10px;
+}
+
