@@ -1,57 +1,141 @@
-/* ===========================
-   MASTER ACTIVE THEME
-   Author: Wife 💛
-   Purpose: Global design tokens
-=========================== */
+/* =========================================================
+   🌍 MASTER GLOBAL THEME
+   Apply to: ALL WEBS
+   Purpose:
+   - Background image + overlay
+   - Base colors & typography
+   - SAFE gradient text
+   Author: wife ❤️
+   Level: SAFE / FOUNDATION
+========================================================= */
 
 /* =========================
-   🌍 MASTER GLOBAL THEME
-   Áp dụng cho TẤT CẢ website
+   1. BIẾN TOÀN CỤC (ROOT)
 ========================= */
 
-/* 1️⃣ Biến màu toàn cục */
 :root {
+  /* 👉 Background image */
+  --bg-image: url("https://i.pinimg.com/736x/b2/dd/d3/b2ddd351f0202ce519c06daef03e2e23.jpg");
+  --overlay-darkness: rgba(0, 0, 0, 0.35);
+
+  /* 👉 Base colors */
   --bg-main: #0f1115;
-  --bg-secondary: #171a21;
+  --bg-secondary: rgba(15, 17, 21, 0.6);
 
-  --text-main: #e6e6eb;
-  --text-muted: #9aa0aa;
+  --text-main: #e6e8ec;
+  --text-muted: #a2a6b3;
 
+  --border-soft: rgba(255, 255, 255, 0.08);
+
+  /* 👉 Accent / Gradient */
   --accent: #7aa2f7;
-  --accent-soft: rgba(122, 162, 247, 0.25);
 
-  --border-soft: rgba(255,255,255,0.08);
+  --main-gradient: linear-gradient(
+    135deg,
+    #ff4da6 0%,
+    #ff2e7a 30%,
+    #9b4dff 50%,
+    #2ecc71 70%,
+    #1abc9c 90%
+  );
+
+  /* 👉 Toggle */
+  /* 1 = bật gradient chữ | 0 = tắt */
+  --use-gradient-text: 1;
+
+  /* 👉 Typography */
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --font-size-base: 14px;
+  --line-height-base: 1.6;
 }
 
-/* 2️⃣ Background chung */
-html, body {
-  background-color: var(--bg-main) !important;
+/* =========================
+   2. NỀN TRANG + CHỮ GỐC
+========================= */
+
+html,
+body {
+  background:
+    linear-gradient(var(--overlay-darkness), var(--overlay-darkness)),
+    var(--bg-image) center / cover no-repeat fixed !important;
+
   color: var(--text-main) !important;
+
+  font-family: var(--font-main) !important;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
 }
 
-/* 3️⃣ Text chung */
-* {
+/* =========================
+   3. RESET NHẸ – AN TOÀN
+========================= */
+
+section,
+article,
+main,
+aside,
+header,
+footer {
+  background-color: transparent !important;
+}
+
+/* =========================
+   4. TEXT CƠ BẢN
+========================= */
+
+p,
+li,
+label,
+span {
   color: var(--text-main);
-  font-family: "Inter", "Segoe UI", sans-serif;
 }
 
-/* 4️⃣ Link */
+small,
+.muted,
+.secondary {
+  color: var(--text-muted);
+}
+
+/* =========================
+   5. LINK (SAFE)
+========================= */
+
 a {
-  color: var(--accent) !important;
+  color: var(--accent);
+  text-decoration: none;
 }
 
-/* 5️⃣ Border & panel */
-div, section, main {
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   6. BORDER / DIVIDER
+========================= */
+
+hr,
+.divider {
   border-color: var(--border-soft);
 }
 
-/* 6️⃣ Scrollbar (web nào hỗ trợ thì áp dụng) */
-::-webkit-scrollbar {
-  width: 10px;
-}
+/* =========================
+   7. GRADIENT CHỮ (SAFE MASTER)
+   ⚠️ KHÔNG áp cho p / span
+========================= */
 
-::-webkit-scrollbar-thumb {
-  background: var(--accent-soft);
-  border-radius: 10px;
+:root[style*="--use-gradient-text: 1"] h1,
+:root[style*="--use-gradient-text: 1"] h2,
+:root[style*="--use-gradient-text: 1"] h3,
+:root[style*="--use-gradient-text: 1"] h4,
+:root[style*="--use-gradient-text: 1"] h5,
+:root[style*="--use-gradient-text: 1"] h6,
+:root[style*="--use-gradient-text: 1"] a,
+:root[style*="--use-gradient-text: 1"] .title,
+:root[style*="--use-gradient-text: 1"] .video-title,
+:root[style*="--use-gradient-text: 1"] .username {
+  background: var(--main-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
