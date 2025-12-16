@@ -1,0 +1,38 @@
+/* ===========================
+   MASTER ACTIVE THEME
+   Author: Wife 💛
+   Purpose: Global design tokens
+=========================== */
+
+:root {
+  /* ===== COLORS ===== */
+  --bg-main: #0f1115;
+  --bg-secondary: #161a22;
+
+  --text-main: #e6e6eb;
+  --text-muted: #9aa0b3;
+
+  --accent-main: #7aa2ff;
+  --accent-soft: #a5b4fc;
+
+  /* ===== TYPO ===== */
+  --font-main: "Inter", system-ui, sans-serif;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+
+  /* ===== RADIUS ===== */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  /* ===== EFFECT ===== */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* ===== GLOBAL RESET (AN TOÀN) ===== */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+}
