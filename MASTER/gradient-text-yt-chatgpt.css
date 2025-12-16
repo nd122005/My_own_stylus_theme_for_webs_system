@@ -1,0 +1,54 @@
+/* =========================================================
+   🌈 MASTER-1
+   Gradient text for p / span
+   Scope: YouTube + ChatGPT ONLY
+   Depends on: MASTER active-theme-for-all-.css
+========================================================= */
+
+/* =========================
+   1. KẾ THỪA GRADIENT TỪ MASTER
+========================= */
+
+:root {
+  --master-gradient: var(--main-gradient);
+}
+
+/* =========================
+   2. YOUTUBE
+   Domain: youtube.com
+========================= */
+
+/* Description, comments, metadata */
+ytd-app p,
+ytd-app span:not([class*="icon"]),
+ytd-app yt-formatted-string {
+  background: var(--master-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   3. CHATGPT
+   Domain: chat.openai.com
+========================= */
+
+body p,
+body span:not(button span):not(svg span):not(code span) {
+  background: var(--master-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   4. SAFETY NET
+   Không phá UI / icon / code
+========================= */
+
+button,
+code,
+pre,
+svg,
+textarea {
+  -webkit-text-fill-color: unset !important;
+  background: none !important;
+}
